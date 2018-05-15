@@ -1,18 +1,14 @@
 
 
 <div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
- Using IBM API Connect
+ Using IBM API Connect v5
  </b></a></div>
 
 ---
 # Create & publish your API in a few clicks
 ---
 
-![API Connect Logo](./images/i000.png)
-
-+++
-
-
+![API Connect Logo](./img/apic.png)
 
 # Table of Content
 
@@ -38,7 +34,7 @@ Table of Content
 - Task 8 : Create the API Connect instance
 - Task 9 : Learn the different parts of the screen
 - Task 10 : Get access to the Sandbox catalog
-- Task 11 : Instanciate the Developer Portal
+- Task 11 : Instantiate the Developer Portal
 5 - Expose an existing REST API
 - Task 12 : Download the API swagger source to your laptop
 - Task 13 : Create a Product
@@ -63,8 +59,6 @@ Table of Content
 Results
 End of Lab
 
-+++
-
 # 1. API Connect Overview
 
 **IBM API Connect** is a comprehensive end-to-end API lifecycle solution that enables the automated creation of APIs, simple discovery of systems of records, self-service access for internal and third party developers and built-in security and governance. Using automated, model-driven tools, create new APIs and microservices based on Node.js and Java runtimes—all managed from a single unified console. Ensure secure & controlled access to the APIs using a rich set of enforced policies. Drive innovation and engage with the developer community through the self-service developer portal. IBM API Connect provides streamlined control across the API lifecycle and also enables businesses to gain deep insights around API consumption from its built-in analytics.
@@ -79,6 +73,10 @@ Find below a list of the main components in API Connect :
 - **Loopback runtime** or micro services runtime. This is where the loopback applications are running. This component is originally coming from StrongLoop acquisition. Loopback applications can be created in minutes to expose data from SQL or NoSQL database and also a good place to perform composition of APIs.
 - Associated to the Loopback runtime is the **Kubernetes** that monitors the Loopback runtime and can provide advanced feature such as auto-scaling.
 - **Developer Toolkit**, running on the API developer, it offers the same web experience as the manager to manage APIs. But this is also the only place where you can define Loopback applications. It also contains CLI to operate directly on the manager whether it is an onPremise version or Bluemix version of API Connect.
+
+Based on these different components, IBM API Connect is able to deliver all the capabilities of an API Management solution and much more...
+
+![API Connect - Capabilities delivered](./img/capabilities.png)
 
 ### Terminology
 
@@ -99,6 +97,7 @@ Find below the architecture details of the solution in the IBM Cloud that we are
 ### Concept Map
 
 We often speak about an API Connect **Cloud** which represents an instantiation of all the components of API Connect. The following diagram describes all the relationships between all the components.
+
 ![API Connect Components](./images/i092.png)
 
 ### Plans & Products
@@ -111,22 +110,25 @@ Plans and APIs are grouped in Products. Through Products, you can manage the ava
 
 The following diagram demonstrates how Products, Plans, and APIs relate to one another. Note how Plans belong to only one Product, can possess different APIs to other Plans within the same Product, and can share APIs with Plans from any Product. Figure to show the hierarchy of Products, Plans, and APIs.
 
-![Products-Plans-APIs](./images/i094.png)
+![Products-Plans-APIs](./img/api-hierarchy.png)
 
 ### Product LifeCycle
 
 When you manage your Product versions, you move them through a series of lifecycle states, from initially staging a draft Product version to an environment, through to publishing to make the Product version available to your application developers, and to eventual retiring and archiving. The following table and diagram describe the various Product lifecycle states for a Product version.
 
-![Products LifeCycle](./images/i093.png)
-
+![Products LifeCycle](./img/lifecycle.png)
 
 # 2. Objectives
 
-
 In this workshop, you will use **API Connect** to define a simple REST API and an API Product in your private instance of API Connect in the **IBM Cloud**. This API is providing a **quote for a loan request**. The back-end application has already been implemented somewhere in the IBM Cloud thru Java code.
+The following pictures present an overview of the workshop components and their relations.
+All the components of the workshop are part of **IBM Cloud**.
+
+![Workshop Overview](./img/lab-overview.png)
+
+On the API Manager, you will define an **API Product** (QuoteMgmt) based on the swagger definition of the existing Quote REST service.
 
 ![Quote API](./images/i001a.png)
-
 
 You will learn:
 
@@ -150,8 +152,9 @@ Here are some helpful steps :
 
 ### Task 1 : Sign in to IBM Cloud
 If you don't have already registered to **IBM Cloud**,  
-Open this link  [IBM Cloud](http://bluemix.net) or type http://bluemix.net in your favorite internet browser.
+Open this link  [IBM Cloud Trial](https://console.bluemix.net/registration/trial) or type https://console.bluemix.net/registration/trial in your favorite internet browser.
 
+If you already have an IBM Cloud account, open this link [IBM Cloud](https://console.bluemix.net/)
 
 ![Create your Lite Account](./images/a001.png)
 
@@ -246,11 +249,11 @@ In this lab, we are going to use the IBM Cloud to implement the API but we can a
 ### Task 12 :  Download the API swagger source to your laptop
 Follow this link to download the source definition of the API.
 
-[Link Here](https://github.com/phthom/Using-IBM-API-Connect/blob/master/QuoteManagementAPI_AW_S.yaml)
+[Link Here](https://raw.githubusercontent.com/phthom/Using-IBM-API-Connect/master/QuoteManagementAPI_AW_S.yaml)
 
 or
 
-https://github.com/phthom/Using-IBM-API-Connect/blob/master/QuoteManagementAPI_AW_S.yaml
+https://raw.githubusercontent.com/phthom/Using-IBM-API-Connect/master/QuoteManagementAPI_AW_S.yaml
 
 ### Task 13 :  Create a Product
 Depending where you are in the API Connect console, Click on the chevrons (**>>**) to get access to the navigation menu on the left side.
@@ -316,7 +319,7 @@ http://SampleJAXRS20-aw.eu-gb.mybluemix.net in the value, close to Default value
 
 ![Properties](./images/i025.png)
 
-Click on the Assemble menu, click on the **Invocation** policy, and set the URL property to $(target-url)$(request.path)$(request.search)
+Click on the Assemble menu, click on the **Invocation** policy, and set the URL property to **$(target-url)$(request.path)$(request.search)**
 
 ![Assembly](./images/i027.png)
 
@@ -587,5 +590,5 @@ You finally went thru the following features :
 # End of Lab
 ---
 <div style="background-color:black;color:white; vertical-align: middle; text-align:center;font-size:250%; padding:10px; margin-top:100px"><b>
- Using IBM API Connect
+ Using IBM API Connect v5
  </b></a></div>
