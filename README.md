@@ -249,11 +249,11 @@ In this lab, we are going to use the IBM Cloud to implement the API but we can a
 ### Task 12 :  Download the API swagger source to your laptop
 Follow this link to download the source definition of the API.
 
-[Link Here](https://raw.githubusercontent.com/phthom/Using-IBM-API-Connect/master/QuoteManagementAPI_AW_S.yaml)
+[Link Here](https://raw.githubusercontent.com/JoelGauci/apicLabs/master/QuoteManagementAPI_AW_S.yaml)
 
 or
 
-https://raw.githubusercontent.com/phthom/Using-IBM-API-Connect/master/QuoteManagementAPI_AW_S.yaml
+https://raw.githubusercontent.com/JoelGauci/apicLabs/master/QuoteManagementAPI_AW_S.yaml
 
 ### Task 13 :  Create a Product
 Depending where you are in the API Connect console, Click on the chevrons (**>>**) to get access to the navigation menu on the left side.
